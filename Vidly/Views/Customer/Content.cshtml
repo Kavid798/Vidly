@@ -1,0 +1,28 @@
+﻿@model Vidly.Models.Customer
+@{
+    ViewBag.Title = "Content";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table class="table table-bordered table-hover">
+@if (Model != null)
+{
+    <tr>
+        <th>Name</th>
+        <th>
+            MembershipTypeName
+
+        </th>
+        <th>BirthDate</th>
+        </tr>
+        <tr>
+            <td>@Model.Name</td>
+        <td>@Model.MembershipType.Name</td>
+@if (Model.BirthDate != null)
+{
+       <td>@Model.BirthDate.Value.ToShortDateString()</td>
+}
+  </tr>
+}
+
+
+</table>
